@@ -1,0 +1,14 @@
+<div class="row">
+
+  <% @restaurants.each do |restaurant| %>
+
+    <div class="col-xs-6 col-md-3 col-sm-4">
+        <a href="/restaurants/<%= restaurant.id %>">
+            <%= image_tag restaurant.restaurant_img.url(:restaurant_index), class: "restaurant img-thumbnail" %>
+            <div class="rest-name"><%= restaurant.name %></div>
+        </a>
+    </div>
+
+  <% end %>
+  
+</div>

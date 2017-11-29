@@ -1,0 +1,6 @@
+<%= simple_form_for @restaurant, :html => { :multipart => true } do |f| %>
+    <%= f.file_field :restaurant_img %>
+    <%= f.input :name, autofocus: true, label: "Restaurant Name" %>
+    <%= f.input :description %>
+    <%= f.button :submit %>
+<% end %>

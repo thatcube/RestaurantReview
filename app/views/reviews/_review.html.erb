@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+<% if review.blank? %>
+    <div class="panel-body">There are no reviews yet! :(</div>
+<% else %>
+  <div class="review-rating panel-heading" data-score="<%= review.rating %>"></div>
+  <div class="panel-body">
+    <%= review.comment %>
+    <% if user_signed_in? %>
+    <p></p>
+        <% if review.user_id == current_user.id %>
+            <%= link_to "Edit", edit_restaurant_review_path(review.restaurant, review), class: "btn btn-default" %>
+            <%= link_to "Delete", restaurant_review_path(review.restaurant, review), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure? This cannot be undone." } %>
+        <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
